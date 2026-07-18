@@ -1,6 +1,8 @@
 from core.broker.base import Broker
 from core.logger import log
 
+from brokers.hdfc.auth import HDFCAuth
+
 
 class HDFCBroker(Broker):
     """
@@ -8,12 +10,14 @@ class HDFCBroker(Broker):
     """
 
     def __init__(self):
+        self.auth = HDFCAuth()
+
         log.info("Initializing HDFC Sky Broker")
 
     def login(self):
         log.info("Login requested")
-        raise NotImplementedError("HDFC Login not implemented")
+        raise NotImplementedError("Login API not implemented yet.")
 
     def logout(self):
         log.info("Logout requested")
-        raise NotImplementedError("HDFC Logout not implemented")
+        raise NotImplementedError("Logout API not implemented yet.")
